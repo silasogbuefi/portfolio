@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+       
+          --lightHover: #fcf4ff;
+          --darkHover: #0a1f12;
+          --darkTheme: #051008;
+
+          --Outfit: ["Outfit", "sans-serif"];
+          --fontOvo: ["Ovo", "serif"];
+
+         
+          --blackShadow : 4px 4px 0 #000;
+          --whiteShadow : 4px 4px 0 #fff;
+
+          --autoGrid: repeat(auto-fit, minmax(200px, 1fr));
+
+           
+      }
+
+
+      
+
+     
+     
+
+
+
+
+
+* {
+  font-family: Outfit;
+}
+/* @theme {
+      colors {
+          --lightHover: #fcf4ff;
+          --darkHover: #2a004a;
+          --darkTheme: #11001F;
+        },
+
+        fonts {
+            --Outfit: ["Outfit", "sans-serif"];
+          --font-Ovo: ["Ovo", "serif"];
+          }
+}
+
+
+* {
+  font-family: Outfit;
+} */
