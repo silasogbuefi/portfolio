@@ -53,8 +53,8 @@ const Header = () => {
         </motion.h3>
         <motion.h1
           variants={itemVariants}
-          className='text-xl sm:text-6xl lg:text-[66px] font-ovo font-bold text-black dark:text-white leading-tight'>
-          Product Strategist & 
+          className='text-3xl sm:text-6xl lg:text-[66px] font-ovo font-bold sm:font-normal text-black dark:text-white leading-tight'>
+          Product Operator & 
           <span className='block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400'>
             Business Creative
           </span>

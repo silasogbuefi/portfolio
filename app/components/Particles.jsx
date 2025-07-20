@@ -24,7 +24,7 @@ const Particles = () => {
         this.size = Math.random() * 2 + 1;
         this.speedX = Math.random() * 2 - 1;
         this.speedY = Math.random() * 2 - 1;
-        this.opacity = Math.random() * 0.5 + 0.2;
+        this.opacity = Math.random() * 0.8 + 0.4;
       }
 
       update() {
@@ -38,7 +38,12 @@ const Particles = () => {
       }
 
       draw() {
-        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+        // Create gradient for better visibility
+        const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size);
+        gradient.addColorStop(0, `rgba(255, 255, 255, ${this.opacity})`);
+        gradient.addColorStop(1, `rgba(255, 255, 255, ${this.opacity * 0.3})`);
+        
+        ctx.fillStyle = gradient;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -47,7 +52,7 @@ const Particles = () => {
 
     // Create particles
     const particles = [];
-    const particleCount = 50;
+    const particleCount = 100;
     for (let i = 0; i < particleCount; i++) {
       particles.push(new Particle());
     }
@@ -56,9 +61,28 @@ const Particles = () => {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
+      // Draw particles
       particles.forEach(particle => {
         particle.update();
         particle.draw();
+      });
+
+      // Draw connections between nearby particles
+      particles.forEach((particle, i) => {
+        particles.slice(i + 1).forEach(otherParticle => {
+          const dx = particle.x - otherParticle.x;
+          const dy = particle.y - otherParticle.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < 100) {
+            ctx.strokeStyle = `rgba(255, 255, 255, ${0.1 * (1 - distance / 100)})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particle.x, particle.y);
+            ctx.lineTo(otherParticle.x, otherParticle.y);
+            ctx.stroke();
+          }
+        });
       });
 
       animationFrameId = requestAnimationFrame(animate);
@@ -75,8 +99,8 @@ const Particles = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 pointer-events-none z-5"
-      style={{ opacity: 0.3 }}
+      className="absolute inset-0 pointer-events-none z-15"
+      style={{ opacity: 0.6 }}
     />
   );
 };

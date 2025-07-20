@@ -59,29 +59,39 @@ const Services = () => {
         {/* Modal for service details */}
         {selectedService && (
           <div
-            className="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 backdrop-blur-sm"
+            className="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
             onClick={() => setSelectedService(null)}
           >
             <div
-              className="bg-white dark:bg-black rounded-2xl shadow-2xl max-w-lg w-full p-8 relative"
+              className="bg-white dark:bg-black rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative"
               onClick={e => e.stopPropagation()}
             >
               <button
-                className="absolute top-4 right-4 text-2xl font-bold text-gray-500 hover:text-black dark:hover:text-white"
+                className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-xl font-bold text-gray-500 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors z-10"
                 onClick={() => setSelectedService(null)}
                 aria-label="Close"
               >
                 &times;
               </button>
-              <h3 className="text-2xl font-bold mb-4 text-center">{selectedService.title}</h3>
-              <div className="w-full aspect-[16/9] mb-4 rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
-                <Image
-                  src={selectedService.image}
-                  alt={selectedService.title}
-                  className="w-full h-full object-cover object-center"
-                />
+              <div className="p-6">
+                <h3 className="text-2xl font-bold mb-4 text-center pr-8">{selectedService.title}</h3>
+                <div className="w-full aspect-[16/9] mb-6 rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+                  <Image
+                    src={selectedService.image}
+                    alt={selectedService.title}
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+                <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-sm md:text-base">{selectedService.extendedDescription}</p>
+                <div className="mt-6 flex justify-center">
+                  <button
+                    className="px-6 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                    onClick={() => setSelectedService(null)}
+                  >
+                    Close
+                  </button>
+                </div>
               </div>
-              <p className="text-gray-700 dark:text-gray-200">{selectedService.extendedDescription}</p>
             </div>
           </div>
         )}

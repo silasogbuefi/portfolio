@@ -187,7 +187,7 @@ export const serviceData = [
         title: 'Medical Administrative & Billing',
         description: 'Healthcare administrative support and claims processing optimization',
         image: assets.e_clinical_works,
-        extendedDescription: 'Proven track record in medical administrative operations and claims processing at Caring Hearts Medical. Achieved 45% increase in clinical administrative efficiency through process improvements and systematic resolution of unprocessed claims, contributing to 25% revenue growth. Expertise includes medical chart management, correspondence handling, data flow optimization, and revenue cycle management. Demonstrated ability to identify and resolve product-related issues that directly impact business metrics and patient care outcomes.'
+        extendedDescription: 'Proven track record in medical administrative operations and claims processing. Achieved 45% increase in clinical administrative efficiency through process improvements and systematic resolution of unprocessed claims, contributing to 25% revenue growth. Expertise includes medical chart management, correspondence handling, data flow optimization, and revenue cycle management.'
     },
 ]
 

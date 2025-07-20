@@ -40,7 +40,7 @@ const About = ({isDarkMode, setIsDarkMode}) => {
             transition={{duration: 0.6, delay: 0.3}}
             className="flex-1 w-full max-w-3xl mx-auto">
             <p className='mb-10 max-w-3xl font-Ovo text-lg text-gray-800 dark:text-gray-200 text-center md:text-left leading-relaxed'>
-              I'm a product strategist who bridges the gap between technical innovation and business impact. Starting in fintech, I've evolved into a dynamic problem-solver who thrives in fast-paced environments where ideas transform into impactful products overnight. My superpower? Turning complex challenges into elegant solutions while keeping teams energized and focused. Whether I'm architecting workflow automations, optimizing customer success processes, or leading cross-functional teams, I bring both technical precision and infectious enthusiasm to every project. I believe the best products come from teams that work hard, laugh often, and never stop pushing boundaries.
+              I'm a product strategist who bridges technical innovation with business impact. Starting in fintech, I've evolved into a dynamic problem-solver who thrives in fast-paced environments. My superpower? Turning complex challenges into elegant solutions while keeping teams energized and focused. Whether I'm architecting workflow automations, optimizing customer success processes, or leading cross-functional teams, I bring both technical precision and infectious enthusiasm to every project. I believe the best products come from teams that work hard, laugh often, and never stop pushing boundaries.
             </p>
             {/* Info Cards */}
             <motion.ul 
